@@ -1,35 +1,42 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
+import FlightsPage from './pages/FlightsPage';
+import AircraftPage from './pages/AircraftPage';
+import CitiesPage from './pages/CitiesPage';
+import AirportsPage from './pages/AirportsPage';
+import PassengersPage from './pages/PassengersPage';
+import './App.css';
 
-// Importing individual page components
-import FlightList from './pages/FlightList';
-import AddFlight from './pages/AddFlight';
-import AddAircraft from './pages/AddAircraft';
-import AddCity from './pages/AddCity';
-import AddPassenger from './pages/AddPassenger';
-
-// Main App component
 export default function App() {
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Airport Management System</h1>
-
-      {/* Navigation Links */}
-      <nav className="flex gap-4 mb-6">
-        <Link to="/flights">Flights</Link>
-        <Link to="/add-flight">Add Flight</Link>
-        <Link to="/add-aircraft">Add Aircraft</Link>
-        <Link to="/add-city">Add City</Link>
-        <Link to="/add-passenger">Add Passenger</Link>
+    <div className="container">
+      <h1>Airport Management System</h1>
+      <nav>
+        <ul>
+          <li>
+            <Link to="/flights">Flights</Link>
+          </li>
+          <li>
+            <Link to="/aircraft">Aircraft</Link>
+          </li>
+          <li>
+            <Link to="/cities">Cities</Link>
+          </li>
+          <li>
+            <Link to="/airports">Airports</Link>
+          </li>
+          <li>
+            <Link to="/passengers">Passengers</Link>
+          </li>
+        </ul>
       </nav>
 
-      {/* Routes */}
       <Routes>
-        <Route path="/flights" element={<FlightList />} />
-        <Route path="/add-flight" element={<AddFlight />} />
-        <Route path="/add-aircraft" element={<AddAircraft />} />
-        <Route path="/add-city" element={<AddCity />} />
-        <Route path="/add-passenger" element={<AddPassenger />} />
+        <Route path="/flights" element={<FlightsPage />} />
+        <Route path="/aircraft" element={<AircraftPage />} />
+        <Route path="/cities" element={<CitiesPage />} />
+        <Route path="/airports" element={<AirportsPage />} />
+        <Route path="/passengers" element={<PassengersPage />} />
       </Routes>
     </div>
   );
