@@ -1,44 +1,96 @@
-// src/api.js
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8081/api';
+const API_BASE_URL = 'http://localhost:8081/api';
 
-// === Cities ===
-export const getCities = () => axios.get(`${BASE_URL}/cities`);
-export const addCity = (city) => axios.post(`${BASE_URL}/cities`, city);
-export const updateCity = (id, city) =>
-  axios.put(`${BASE_URL}/cities/${id}`, city);
-export const deleteCity = (id) => axios.delete(`${BASE_URL}/cities/${id}`);
+// Cities
+export const getCities = async () => {
+  const { data } = await axios.get(`${API_BASE_URL}/cities`);
+  return data;
+};
+export const createCity = async (city) => {
+  const { data } = await axios.post(`${API_BASE_URL}/cities`, city);
+  return data;
+};
+export const updateCity = async (id, city) => {
+  const { data } = await axios.put(`${API_BASE_URL}/cities/${id}`, city);
+  return data;
+};
+export const deleteCity = async (id) => {
+  const { data } = await axios.delete(`${API_BASE_URL}/cities/${id}`);
+  return data;
+};
 
-// === Airports ===
-export const getAirports = () => axios.get(`${BASE_URL}/airports`);
-export const addAirport = (airport) =>
-  axios.post(`${BASE_URL}/airports`, airport);
-export const updateAirport = (id, airport) =>
-  axios.put(`${BASE_URL}/airports/${id}`, airport);
-export const deleteAirport = (id) => axios.delete(`${BASE_URL}/airports/${id}`);
+// Aircraft
+export const getAircraft = async () => {
+  const { data } = await axios.get(`${API_BASE_URL}/aircraft`);
+  return data;
+};
+export const createAircraft = async (aircraft) => {
+  const { data } = await axios.post(`${API_BASE_URL}/aircraft`, aircraft);
+  return data;
+};
+export const updateAircraft = async (id, aircraft) => {
+  const { data } = await axios.put(`${API_BASE_URL}/aircraft/${id}`, aircraft);
+  return data;
+};
+export const deleteAircraft = async (id) => {
+  const { data } = await axios.delete(`${API_BASE_URL}/aircraft/${id}`);
+  return data;
+};
 
-// === Aircraft ===
-export const getAircraft = () => axios.get(`${BASE_URL}/aircraft`);
-export const addAircraft = (aircraft) =>
-  axios.post(`${BASE_URL}/aircraft`, aircraft);
-export const updateAircraft = (id, aircraft) =>
-  axios.put(`${BASE_URL}/aircraft/${id}`, aircraft);
-export const deleteAircraft = (id) =>
-  axios.delete(`${BASE_URL}/aircraft/${id}`);
+// Airports
+export const getAirports = async () => {
+  const { data } = await axios.get(`${API_BASE_URL}/airports`);
+  return data;
+};
+export const createAirport = async (airport) => {
+  const { data } = await axios.post(`${API_BASE_URL}/airports`, airport);
+  return data;
+};
+export const updateAirport = async (id, airport) => {
+  const { data } = await axios.put(`${API_BASE_URL}/airports/${id}`, airport);
+  return data;
+};
+export const deleteAirport = async (id) => {
+  const { data } = await axios.delete(`${API_BASE_URL}/airports/${id}`);
+  return data;
+};
 
-// === Passengers ===
-export const getPassengers = () => axios.get(`${BASE_URL}/passengers`);
-export const addPassenger = (passenger) =>
-  axios.post(`${BASE_URL}/passengers`, passenger);
-export const updatePassenger = (id, passenger) =>
-  axios.put(`${BASE_URL}/passengers/${id}`, passenger);
-export const deletePassenger = (id) =>
-  axios.delete(`${BASE_URL}/passengers/${id}`);
+// Flights
+export const getFlights = async () => {
+  const { data } = await axios.get(`${API_BASE_URL}/flights`);
+  return data;
+};
+export const createFlight = async (flight) => {
+  const { data } = await axios.post(`${API_BASE_URL}/flights`, flight);
+  return data;
+};
+export const updateFlight = async (id, flight) => {
+  const { data } = await axios.put(`${API_BASE_URL}/flights/${id}`, flight);
+  return data;
+};
+export const deleteFlight = async (id) => {
+  const { data } = await axios.delete(`${API_BASE_URL}/flights/${id}`);
+  return data;
+};
 
-// === Flights ===
-export const getFlights = () => axios.get(`${BASE_URL}/flights`);
-export const addFlight = (flight) => axios.post(`${BASE_URL}/flights`, flight);
-export const updateFlight = (id, flight) =>
-  axios.put(`${BASE_URL}/flights/${id}`, flight);
-export const deleteFlight = (id) => axios.delete(`${BASE_URL}/flights/${id}`);
+// Passengers
+export const getPassengers = async () => {
+  const { data } = await axios.get(`${API_BASE_URL}/passengers`);
+  return data;
+};
+export const createPassenger = async (passenger) => {
+  const { data } = await axios.post(`${API_BASE_URL}/passengers`, passenger);
+  return data;
+};
+export const updatePassenger = async (id, passenger) => {
+  const { data } = await axios.put(
+    `${API_BASE_URL}/passengers/${id}`,
+    passenger
+  );
+  return data;
+};
+export const deletePassenger = async (id) => {
+  const { data } = await axios.delete(`${API_BASE_URL}/passengers/${id}`);
+  return data;
+};

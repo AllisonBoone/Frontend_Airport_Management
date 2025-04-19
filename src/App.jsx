@@ -1,43 +1,42 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import FlightsPage from './pages/FlightsPage';
-import AircraftPage from './pages/AircraftPage';
-import CitiesPage from './pages/CitiesPage';
-import AirportsPage from './pages/AirportsPage';
-import PassengersPage from './pages/PassengersPage';
-import './App.css';
+import { NavLink, Routes, Route } from 'react-router-dom';
+
+import AircraftPage from './pages/AircraftPage.jsx';
+import AirportsPage from './pages/AirportsPage.jsx';
+import CitiesPage from './pages/CitiesPage.jsx';
+import FlightsPage from './pages/FlightsPage.jsx';
+import PassengersPage from './pages/PassengersPage.jsx';
 
 export default function App() {
   return (
-    <div className="container">
-      <h1>Airport Management System</h1>
+    <>
       <nav>
-        <ul>
+        <ul className="nav-list">
           <li>
-            <Link to="/flights">Flights</Link>
+            <NavLink to="/aircraft">Aircraft</NavLink>
           </li>
           <li>
-            <Link to="/aircraft">Aircraft</Link>
+            <NavLink to="/airports">Airports</NavLink>
           </li>
           <li>
-            <Link to="/cities">Cities</Link>
+            <NavLink to="/cities">Cities</NavLink>
           </li>
           <li>
-            <Link to="/airports">Airports</Link>
+            <NavLink to="/flights">Flights</NavLink>
           </li>
           <li>
-            <Link to="/passengers">Passengers</Link>
+            <NavLink to="/passengers">Passengers</NavLink>
           </li>
         </ul>
       </nav>
 
       <Routes>
-        <Route path="/flights" element={<FlightsPage />} />
         <Route path="/aircraft" element={<AircraftPage />} />
-        <Route path="/cities" element={<CitiesPage />} />
         <Route path="/airports" element={<AirportsPage />} />
+        <Route path="/cities" element={<CitiesPage />} />
+        <Route path="/flights" element={<FlightsPage />} />
         <Route path="/passengers" element={<PassengersPage />} />
       </Routes>
-    </div>
+    </>
   );
 }
